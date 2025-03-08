@@ -40,3 +40,16 @@ resetButton.onclick = function () {
     minutes = 0;
     secondsTimer.innerText = "0";
 };
+
+const rangeValue = document.getElementById("js--rangeValue");
+const slider = document.getElementById("js--slider");
+const body = document.getElementById("js--body");
+
+slider.value = 2;
+rangeValue.innerText = slider.value + "x";
+
+slider.oninput = function(){
+    rangeValue.innerText = slider.value + "x";
+    body.style.fontSize = slider.value + "rem"; 
+}
+
