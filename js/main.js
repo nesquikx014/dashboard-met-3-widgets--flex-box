@@ -20,11 +20,11 @@ startButton.onclick = function(){
         if(seconds === 60){
             minutes = minutes + 1;
             seconds = 0;
-            miliseconds = 0;
+            ;
             return;
         }
         secondsTimer.innerText = seconds;
-    }, 100);
+    }, 1000);
 }
 
 stopButton.onclick = function(){
@@ -54,22 +54,21 @@ slider.oninput = function(){
 }
 
 const paragraph = document.getElementById("js--text");
-
+const img = document.getElementById("js--img");
 let data = fetch("data.json").then(
     function(binnenGekomenData){
         return binnenGekomenData.json();
     }).then(
         function(echteData){
-            paragraph.innerHTML = echteData;
-        }
-    );
-
-
+            paragraph.innerHTML = echteData.text;
+            img.src = echteData.img;
+        });
+        
+    
 
 
 /*const text = document.getElementById("js--text");
-console.log(text);
-text.innerText = data.text;*/
+text.innerText = data.text;*/ 
 
 /*const img = document.getElementById("js--img");
 console.log(img);
