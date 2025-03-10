@@ -53,3 +53,24 @@ slider.oninput = function(){
     body.style.fontSize = slider.value + "rem"; 
 }
 
+const paragraph = document.getElementById("js--text");
+
+let data = fetch("data.json").then(
+    function(binnenGekomenData){
+        return binnenGekomenData.json();
+    }).then(
+        function(echteData){
+            paragraph.innerHTML = echteData;
+        }
+    );
+
+
+
+
+/*const text = document.getElementById("js--text");
+console.log(text);
+text.innerText = data.text;*/
+
+/*const img = document.getElementById("js--img");
+console.log(img);
+img.innerText = data.img;*/ 
